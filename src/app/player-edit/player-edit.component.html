@@ -1,0 +1,100 @@
+<div>
+    <div style="font-size: 40px;">
+        <span class="mb-6"> <a href="#" routerLink="/players">
+            <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+        </div>
+
+<!-- 
+    <div *ngIf="photo;else other_content">
+        <img src="{{photoUrl}}" class="rounded-circle" alt="poza cafea">
+        <button type="button" (click)="deletePhoto()" class="btn btn-secondary , float-left">Delete photo</button>
+    </div>
+
+    <ng-template #other_content>
+        <button type="button" class="btn btn-secondary , float-left" routerLink="uploadphoto"
+            style="margin-right: 500px">Add photo</button>
+    </ng-template>
+</div> -->
+
+<br />
+<br />
+
+
+<div class="row" *ngIf="showMsg==1">
+    <p class="alert alert-success">
+        <strong>Player was edited successfully!</strong>
+    </p>
+</div>
+
+<div class="row" *ngIf="showMsg==2">
+    <p class="alert alert-danger">
+        <strong>Player cannot be edited!</strong>
+    </p>
+</div>
+
+<div class="card spur-card">
+
+    <div class="card-header">
+        <div class="spur-card-title font-weight-bold"> Edit Player</div>
+    </div>
+    <div class="card-body ">
+    
+            
+                <ul>
+                    <label>First Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editplayer.firstName" class="form-control" name="firstName" required
+                         readonly #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Last Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editplayer.lastName" class="form-control"
+                         readonly   name="lastName" required #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Age:
+                        <br />
+                        <input type="number" [(ngModel)]="editplayer.age" class="form-control" name="age" required
+                            #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Gender:
+                        <br />
+                        <input type="text" [(ngModel)]="editplayer.gender" class="form-control" name="gender" required
+                         readonly   #name="ngModel">
+                    </label>
+                    <br/>
+                    <label>Nationality:
+                        <br />
+                        <input type="text" [(ngModel)]="editplayer.nationality" class="form-control" name="nationality" required
+                         readonly   #name="ngModel">
+                    </label>
+                
+                    <br />
+                    <label for="ranking">Ranking:
+                        <input type="number" [(ngModel)]="editplayer.ranking" class="form-control"
+                         min="1"   name="ranking" required #name="ngModel" readonly>
+                    </label>
+                    <br />
+                    <label>Coach:
+                        <br />
+                        <input type="text" [(ngModel)]="editplayer.coach" class="form-control"
+                            style="width: 200px" max="10000" name="coach" required #name="ngModel">
+                    </label>
+                    <br />
+                   
+                  
+
+
+                    <button type="button" class="btn btn-info edit" (click)="editPlayer(editplayer)">
+                        Save
+                    </button>
+
+
+                </ul>
+            
+         
+</div>
+</div>
+</div>

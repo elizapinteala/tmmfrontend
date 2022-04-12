@@ -1,0 +1,9 @@
+export const APP_TITLE = 'Ski management';
+export const CHALET = 'Chalet';
+export const INSTRUCTOR = 'Instructor';
+export const SCHEDULE = 'Schedule';
+export const SKI_RENTAL = 'Ski Rental';
+export const SKI_SCHOOL = 'Ski School';
+export const SKIPASS = 'Skipass';
+export const SLOPE = 'Slope';
+export const SPORTSWEAR = 'Sports Wear';

@@ -1,0 +1,85 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 300px;
+  text-align: left;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 100px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+th span.mat-sort-header {
+  font-size: 15px;
+}
+
+td a,
+td a:visited {
+  color:#09A18D !important;
+}
+
+td a:hover,
+td a:active {
+  color: #000000 !important;
+}
+
+td a {
+  color:  #09A18D !important; 
+}
+
+
+.cts-green-disabled{
+  
+   color: white !important; 
+  background-color: #868585 !important;
+
+}
+
+.cts-grey-disabled{
+  color: #868585 !important;
+}
+
+.card-header{
+  width: 100%;
+  text-align: center;
+}
+
+.spur-card {
+  width: calc(100% - 10px);
+  height: calc(100% - 0.001px);
+}
+
+.btn-secondary {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  background-color: #09A18D;
+}
+
+.btn-primary {
+  align-self: left;
+  background-color: #09A18D !important;
+}
+
+.backbutton {
+  width: 90px !important;
+  align-self: left;
+  background-color: #09A18D !important;
+} 
+
+.backbutton
+{
+    width: 90px !important;
+    align-self: left;
+    background-color: #09A18D !important;
+}
+.routerLink{
+	color: #09A18D !important;
+  font-weight: bold;
+ 
+}

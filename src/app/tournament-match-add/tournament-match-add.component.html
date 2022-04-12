@@ -1,0 +1,185 @@
+<div class="row">
+    <div class="col-md-6">
+      
+        <div style="font-size: 40px;">
+            <span class="mb-6"> <a href="#" routerLink="/tournamentMatch">
+                <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+            </div>
+        <div>
+            <br />
+        </div>
+        <div class="row" *ngIf="showMsg==1">
+            <p class="alert alert-success">
+                <strong>Match was added successfully!</strong>
+            </p>
+        </div>
+        <div></div>
+        <div class="row" *ngIf="showMsg==2">
+            <p class="alert alert-danger">
+                <strong>Match cannot be added!</strong>
+            </p>
+        </div>
+        <div class="card spur-card">
+            <div class="card-header">
+                <div class="spur-card-title font-weight-bold">Add a new match</div>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="onSubmit(matchForm)" #matchForm="ngForm" class="form">
+                    <div class="form-group">
+                        <label for="namePlayer1">Name Player1: </label>
+                        <input type="text" [(ngModel)]="match.namePlayer1" class="form-control"
+                            placeholder="Enter player first name" name="namePlayer1" required #namePlayer1="ngModel">
+                    </div>
+                    <div *ngIf="namePlayer1.invalid && (namePlayer1.dirty || namePlayer1.touched)" class="alert alert-danger">
+                        <div *ngIf="namePlayer1.errors.required">
+                            First name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="namePlayer2">Name Player2: </label>
+                        <input type="text" [(ngModel)]="match.namePlayer2" class="form-control"
+                            placeholder="Enter player first name" name="namePlayer2" required #namePlayer2="ngModel">
+                    </div>
+                    <div *ngIf="namePlayer2.invalid && (namePlayer2.dirty || namePlayer2.touched)" class="alert alert-danger">
+                        <div *ngIf="namePlayer2.errors.required">
+                            First name is required.
+                        </div>
+                    </div>
+
+<!-- 
+                    <div class="form-group">
+                        <label for="matchDate">Match Date: </label>
+                        <input type="text" [(ngModel)]="match.matchDate" class="form-control"
+                            placeholder="Enter match date" name="matchDate" required #matchDate="ngModel">
+                    </div>
+                    <div *ngIf="matchDate.invalid && (matchDate.dirty || matchDate.touched)" class="alert alert-danger">
+                        <div *ngIf="matchDate.errors.required">
+                            Match date is required.
+                        </div>
+                    </div> -->
+
+                    <label for="matchDate">Match Date:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <input [(ngModel)]="match.matchDate" matInput [matDatepicker]="picker2"
+                                     placeholder="Choose a date" name="matchDate" required
+                                    #matchDate="ngModel">
+                                <mat-datepicker-toggle matSuffix [for]="picker2">
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker2>
+                                </mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </label>
+
+                    <!-- <div class="form-group">
+                        <label for="matchType">Match Type: </label>
+                        <input type="text" [(ngModel)]="match.matchType" class="form-control"
+                            placeholder="Enter match type" name="matchType" required #matchType="ngModel">
+                    </div>
+                    <div *ngIf="matchType.invalid && (matchType.dirty || matchType.touched)" class="alert alert-danger">
+                        <div *ngIf="matchType.errors.required">
+                            Match type is required.
+                        </div>
+                    </div> -->
+
+                    <label for="matchType">Match Type:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <mat-label>Status</mat-label>
+                                <mat-select [(ngModel)]="match.matchType" name="matchType" required
+                                    #matchType="ngModel">
+                                    <mat-option *ngFor="let mc of matchTypeValue"
+                                        [value]="mc.value">
+                                        {{mc.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </label>
+
+
+                    <div class="form-group">
+                        <label for="tour">Tour: </label>
+                        <input type="number" [(ngModel)]="match.tour" class="form-control"
+                       [min]="1" [max]="1"     placeholder="Enter tournament tour" name="tour" required #tour="ngModel">
+                    </div>
+                    <div *ngIf="tour.invalid && (tour.dirty || tour.touched)" class="alert alert-danger">
+                        <div *ngIf="tour.errors.required">
+                            Tour is required.
+                        </div>
+                    </div>
+            
+                
+                    <div class="form-group">
+                        <label for="courtName">Court Name: </label>
+                        <input type="text" [(ngModel)]="match.courtName" class="form-control"
+                            placeholder="Enter match courtName" name="courtName" required #courtName="ngModel">
+                    </div>
+                    <div *ngIf="courtName.invalid && (courtName.dirty || courtName.touched)" class="alert alert-danger">
+                        <div *ngIf="courtName.errors.required">
+                            Court name is required.
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="refereeName">Referee Name: </label>
+                        <input type="text" [(ngModel)]="match.refereeName" class="form-control"
+                            placeholder="Enter match refereeName" name="refereeName" required #refereeName="ngModel">
+                    </div>
+                    <div *ngIf="refereeName.invalid && (refereeName.dirty || refereeName.touched)" class="alert alert-danger">
+                        <div *ngIf="refereeName.errors.required">
+                            Referee name is required.
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="status">Status: </label>
+                        <input type="text" [(ngModel)]="match.status" class="form-control"
+                            placeholder="Enter match status" name="status" required #status="ngModel">
+                    </div>
+                    <div *ngIf="status.invalid && (status.dirty || status.touched)" class="alert alert-danger">
+                        <div *ngIf="status.errors.required">
+                            Status is required.
+                        </div>
+                    </div> -->
+
+                    
+                    <label for="status">Status:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <mat-label>Status</mat-label>
+                                <mat-select [(ngModel)]="match.status" name="status" required
+                                    #status="ngModel">
+                                    <mat-option *ngFor="let st of statusType"
+                                        [value]="st.value">
+                                        {{st.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </label>
+
+                 
+
+                <br/>
+
+                <div class="form-group">
+                    <label for="score">Score: </label>
+                    <input type="text" [(ngModel)]="match.score" class="form-control"
+                        placeholder="Enter match score" name="score" required #score="ngModel">
+                </div>
+                <!-- <div *ngIf="score.invalid && (score.dirty || score.touched)" class="alert alert-danger">
+                    <div *ngIf="score.errors.required">
+                        Score is required.
+                    </div>
+                </div> -->
+
+                    <button type="submit" class="btn btn-primary"> Add match </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>

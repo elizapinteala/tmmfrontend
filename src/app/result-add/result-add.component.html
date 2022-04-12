@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-md-6">
+        <div style="font-size: 40px;">
+            <span class="mb-6"> <a href="#" routerLink="/result">
+                <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+            </div>
+        <div>
+            <br />
+        </div>
+        <div class="row" *ngIf="showMsg==1">
+            <p class="alert alert-success">
+                <strong>Result was added successfully!</strong>
+            </p>
+        </div>
+        <div></div>
+        <div class="row" *ngIf="showMsg==2">
+            <p class="alert alert-danger">
+                <strong>Result cannot be added!</strong>
+            </p>
+        </div>
+        <div class="card spur-card">
+            <div class="card-header">
+                <div class="spur-card-title font-weight-bold"> Add a new result</div>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="onSubmit(resultForm)" #resultForm="ngForm" class="form">
+                    <div class="form-group">
+                        <label for="matchName">Match Name: </label>
+                        <input type="text" [(ngModel)]="result.matchName" class="form-control"
+                            placeholder="Enter match  name" name="matchName" required #matchName="ngModel">
+                    </div>
+                    <div *ngIf="matchName.invalid && (matchName.dirty || matchName.touched)" class="alert alert-danger">
+                        <div *ngIf="matchName.errors.required">
+                            Match name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="winner1Name">Winner Name: </label>
+                        <input type="text" [(ngModel)]="result.winner1Name" class="form-control"
+                            placeholder="Enter winner name" name="winner1Name" required #winner1Name="ngModel">
+                    </div>
+                    <div *ngIf="winner1Name.invalid && (winner1Name.dirty || winner1Name.touched)" class="alert alert-danger">
+                        <div *ngIf="winner1Name.errors.required">
+                            Winner name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration: </label>
+                        <input type="text" [(ngModel)]="result.duration" class="form-control"
+                            placeholder="Enter match duration" name="duration" required #duration="ngModel">
+                    </div>
+                    <div *ngIf="duration.invalid && (duration.dirty || duration.touched)" class="alert alert-danger">
+                        <div *ngIf="duration.errors.required">
+                            Duration is required.
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="audience">Audience: </label>
+                        <input type="number" [(ngModel)]="result.audience" class="form-control"
+                            placeholder="Enter match audience" name="audience" required #audience="ngModel">
+                    </div>
+                    <div *ngIf="audience.invalid && (audience.dirty || audience.touched)" class="alert alert-danger">
+                        <div *ngIf="audience.errors.required">
+                            Audience is required.
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="round">Round: </label>
+                        <input type="text" [(ngModel)]="result.round" class="form-control"
+                            placeholder="Enter match round" name="round" required #round="ngModel">
+                    </div>
+                    <div *ngIf="round.invalid && (round.dirty || round.touched)" class="alert alert-danger">
+                        <div *ngIf="round.errors.required">
+                            Round is required.
+                        </div>
+                    </div>
+            
+                
+
+                    <button type="submit" class="btn btn-primary"> Add result </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>

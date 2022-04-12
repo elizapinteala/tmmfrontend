@@ -1,0 +1,70 @@
+<div>
+    <!-- <span class="mb-3"><button class="btn btn-primary backbutton" (click)="goBack()">Back </button></span> -->
+    <div>
+        <div style="font-size: 40px;">
+        <span class="mb-3"> <a href="#" routerLink="add">
+            <fa-icon [icon]="faAdd" title="add result"></fa-icon></a></span>
+            </div>
+        
+    </div>
+</div>
+<br />
+<div class="row">
+    <!-- <div class="card spur-card">
+        <div class="card-header">
+
+            <div class="spur-card-title font-weight-bold"> List results</div>
+        </div>
+        <div class="card-body" cols="3"> -->
+            <table mat-table [dataSource]="resultList" matSort>
+                <ng-container matColumnDef="matchName">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Match Name</span>
+                       
+                    </th>
+                    <td mat-cell *matCellDef="let resultList">
+                            {{resultList.matchName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="winner1Name">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Winner Name</span>
+                    </th>
+                    <td mat-cell *matCellDef="let resultList">
+                            {{resultList.winner1Name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="duration">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Duration</span>
+                    </th>
+                    <td mat-cell *matCellDef="let resultList"> {{resultList.duration}} </td>
+                </ng-container>
+                <ng-container matColumnDef="audience">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Audience</span>
+                    </th>
+                    <td mat-cell *matCellDef="let resultList"> {{resultList.audience}} </td>
+                </ng-container>
+                <ng-container matColumnDef="round">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Round </span>
+    
+                    </th>
+                    <td mat-cell *matCellDef="let resultList"> {{resultList.round }} </td>
+                </ng-container>
+               
+
+                <!-- <ng-container matColumnDef="filter">
+                    <th mat-header-cell *matHeaderCellDef style="width:250px;">
+                        <button type="button" class="btn btn-link" (click)="filterMatches();" title="Filter"><i
+                                class="fas fa-search"></i></button> |
+                        <button type="button" class="btn btn-link"
+                            (click)=" getMatches(); clearFilter()" title="Clear filters"><i
+                                class="fas fa-trash"></i></button>
+
+                    </th>
+
+                    
+
+                </ng-container> -->
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    <!-- </div>
+</div> -->

@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-md-6">
+        <div style="font-size: 40px;">
+            <span class="mb-6"> <a href="#" routerLink="/players">
+                <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+            </div>
+        <div>
+            <br />
+        </div>
+        <div class="row" *ngIf="showMsg==1">
+            <p class="alert alert-success">
+                <strong>Player was added successfully!</strong>
+            </p>
+        </div>
+        <div></div>
+        <div class="row" *ngIf="showMsg==2">
+            <p class="alert alert-danger">
+                <strong>Player cannot be added!</strong>
+            </p>
+        </div>
+        <div class="card spur-card">
+            <div class="card-header">
+                <div class="spur-card-title font-weight-bold"> Add a new player</div>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="onSubmit(playerForm)" #playerForm="ngForm" class="form">
+                    <div class="form-group required">
+                        <label for="firstName">First Name: </label>
+                        <input type="text" [(ngModel)]="player.firstName" class="form-control"
+                            placeholder="Enter player first name" name="firstName" required #firstName="ngModel">
+                    </div>
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                        <div *ngIf="firstName.errors.required">
+                            First name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name: </label>
+                        <input type="text" [(ngModel)]="player.lastName" class="form-control"
+                            placeholder="Enter player last name" name="lastName" required #lastName="ngModel">
+                    </div>
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                        <div *ngIf="lastName.errors.required">
+                            Last name is required.
+                        </div>
+                    </div>
+
+                    <label for="gender">Gender:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <mat-label>Gender</mat-label>
+                                <mat-select [(ngModel)]="player.gender" name="gender" required
+                                    #gender="ngModel">
+                                    <mat-option *ngFor="let gen of genderValues"
+                                        [value]="gen.value">
+                                        {{gen.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </label>
+                  
+
+                    <div class="form-group">
+                        <label for="age">Age: </label>
+                        <input type="number" [(ngModel)]="player.age" class="form-control"
+                            placeholder="Enter player age" name="age" required #age="ngModel">
+                    </div>
+                    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+                        <div *ngIf="age.errors.required">
+                            Age is required.
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="nationality">Nationality: </label>
+                        <input type="text" [(ngModel)]="player.nationality" class="form-control"
+                            placeholder="Enter player nationality" name="nationality" required #nationality="ngModel">
+                    </div>
+                    <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
+                        <div *ngIf="nationality.errors.required">
+                            Nationality is required.
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="ranking">Ranking: </label>
+                        <input type="number" [(ngModel)]="player.ranking" class="form-control"
+                            placeholder="Enter player ranking" name="ranking" required #ranking="ngModel">
+                    </div>
+                    <div *ngIf="ranking.invalid && (ranking.dirty || ranking.touched)" class="alert alert-danger">
+                        <div *ngIf="ranking.errors.required">
+                            Ranking is required.
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="favourite">Favourite: </label>
+                        <input type="number" [(ngModel)]="player.favourite" class="form-control"
+                            placeholder="Enter player favourite" name="favourite" required #favourite="ngModel">
+                    </div>
+                    <div *ngIf="favourite.invalid && (favourite.dirty || favourite.touched)" class="alert alert-danger">
+                        <div *ngIf="favourite.errors.required">
+                            Favourite is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coach">Coach: </label>
+                        <input type="text" [(ngModel)]="player.coach" class="form-control"
+                            placeholder="Enter player coach" name="coach" required #coach="ngModel">
+                    </div>
+                    <div *ngIf="coach.invalid && (coach.dirty || coach.touched)" class="alert alert-danger">
+                        <div *ngIf="coach.errors.required">
+                            Coach is required.
+                        </div>
+                    </div>
+                
+
+                    <button type="submit" class="btn btn-primary"> Add player </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>

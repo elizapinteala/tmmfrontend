@@ -1,0 +1,101 @@
+<div class="container-fluid" id="wrapper">
+  <div class="row text-white bg-dark py-1">
+      <div class="float-left pl-4">
+          <h2 style="text-align: center;">Tennins Tournament Management</h2>
+         
+      </div>
+  </div>
+  <div class="col-lg-9">
+    <!-- Page Content -->
+    <router-outlet></router-outlet>
+    <!-- /#page-content-wrapper -->
+</div>
+<div class="row">
+  <!-- Sidebar -->
+  <div class="col-lg-3">
+      <div class="border-right">
+          <div class="list-group list-group-flush">
+           
+              <a href="#" class="list-group-item list-group-item-action" routerLink="/home"> <i
+                      class="fas fa-home fa-w-18 fa-lg"></i>
+                  <h5 class="d-inline pl-3 d-none font-weight-light">HOME</h5>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action" routerLink="/players">
+                  <i class="fas fa-map fa-w-18 fa-lg"></i>
+                  <h5 class="d-inline pl-3 d-none font-weight-light">Players</h5>
+              </a>
+              <a href="#" class="list-group-item list-group-item-action" routerLink="/courts">
+                <i class="fas fa-map fa-w-18 fa-lg"></i>
+                <h5 class="d-inline pl-3 d-none font-weight-light">Courts</h5>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" routerLink="/referees">
+                <i class="fas fa-map fa-w-18 fa-lg"></i>
+                <h5 class="d-inline pl-3 d-none font-weight-light">Referee</h5>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" routerLink="/tournamentMatch">
+                <i class="fas fa-map fa-w-18 fa-lg"></i>
+                <h5 class="d-inline pl-3 d-none font-weight-light">Tournament Match</h5>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action" routerLink="/result">
+                <i class="fas fa-map fa-w-18 fa-lg"></i>
+                <h5 class="d-inline pl-3 d-none font-weight-light">Results</h5>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action" routerLink="/report">
+                <i class="fas fa-map fa-w-18 fa-lg"></i>
+                <h5 class="d-inline pl-3 d-none font-weight-light">Report</h5>
+            </a>
+
+          </div>
+      </div>
+  </div>
+
+  <!-- <button mat-button [matMenuTriggerFor]="afterMenu">Main manu</button>
+<mat-menu #afterMenu="matMenu" xPosition="after">
+ 
+  <button mat-menu-item><a href="#" class="list-group-item list-group-item-action" routerLink="/home"> <i
+    class="fas fa-home fa-w-18 fa-lg"></i>
+<h5 class="d-inline pl-3 d-none font-weight-light">HOME</h5>
+</a></button>
+  <button mat-menu-item><a href="#" class="list-group-item list-group-item-action" routerLink="/players">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Players</h5>
+</a></button>
+  <button mat-menu-item><a href="#" class="list-group-item list-group-item-action" routerLink="/courts">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Courts</h5>
+</a></button>
+  <button mat-menu-item><a href="#" class="list-group-item list-group-item-action" routerLink="/referees">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Referee</h5>
+</a></button>
+  <button mat-menu-item> <a href="#" class="list-group-item list-group-item-action" routerLink="/tournamentMatch">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Tournament Match</h5>
+</a></button>
+  <button mat-menu-item>   <a href="#" class="list-group-item list-group-item-action" routerLink="/result">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Results</h5>
+</a></button>
+<button mat-menu-item><a href="#" class="list-group-item list-group-item-action" routerLink="/report">
+    <i class="fas fa-map fa-w-18 fa-lg"></i>
+    <h5 class="d-inline pl-3 d-none font-weight-light">Report</h5></a></button>
+</mat-menu> -->
+
+  <!-- /#sidebar-wrapper -->
+
+  <div class="col-lg-9">
+      <!-- Page Content -->
+      <router-outlet></router-outlet>
+      <!-- /#page-content-wrapper -->
+  </div>
+</div>
+</div>
+<footer class="my-2 pt-5 text-muted text-center text-small">
+  <hr class="mb-1">
+  <h6>Ioana-Alexandra Mihai</h6>
+  <h6>Facultatea de Matematica si Informatica din cadrul Universitatii Bucuresti</h6>
+  <h6>Specializarea Matematica Informatica</h6>
+  <h6>Profesor coordonator Cristian Kevorchian</h6>
+  <p class="mb-1"> 2019-2020</p>
+</footer>

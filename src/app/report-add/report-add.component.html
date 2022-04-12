@@ -1,0 +1,176 @@
+<div class="row">
+    <div class="col-md-6">
+        <div style="font-size: 40px;">
+            <span class="mb-3"> <a href="#" routerLink="/report">
+                <fa-icon [icon]="faArrowLeft" title="back"></fa-icon></a></span>
+                </div>
+        <div>
+            <br />
+        </div>
+        <div class="row" *ngIf="showMsg==1">
+            <p class="alert alert-success">
+                <strong>Report was added successfully!</strong>
+            </p>
+        </div>
+        <div></div>
+        <div class="row" *ngIf="showMsg==2">
+            <p class="alert alert-danger">
+                <strong>Report cannot be added!</strong>
+            </p>
+        </div>
+        <div class="card spur-card">
+            <div class="card-header">
+                <div class="spur-card-title font-weight-bold"> Add a new report</div>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="onSubmit(reportForm)" #reportForm="ngForm" class="form">
+                    <div class="form-group">
+                        <label for="playerName">Player Name: </label>
+                        <input type="text" [(ngModel)]="report.playerName" class="form-control"
+                            placeholder="Enter player name" name="playerName" required #playerName="ngModel">
+                    </div>
+                    <div *ngIf="playerName.invalid && (playerName.dirty || playerName.touched)" class="alert alert-danger">
+                        <div *ngIf="playerName.errors.required">
+                            Player name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="result">Result: </label>
+                        <input type="text" [(ngModel)]="report.result" class="form-control"
+                            placeholder="Enter player name" name="result" required #result="ngModel">
+                    </div>
+                    <div *ngIf="result.invalid && (result.dirty || result.touched)" class="alert alert-danger">
+                        <div *ngIf="result.errors.required">
+                            Result is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aches">Aches: </label>
+                        <input type="text" [(ngModel)]="report.aches" class="form-control"
+                            placeholder="Enter report match date" name="aches" required #aches="ngModel">
+                    </div>
+                    <div *ngIf="aches.invalid && (aches.dirty || aches.touched)" class="alert alert-danger">
+                        <div *ngIf="aches.errors.required">
+                            Aches is required.
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="doubleFault">Double Faults: </label>
+                        <input type="number" [(ngModel)]="report.doubleFault" class="form-control"
+                            placeholder="Enter double Fault" name="doubleFault" required #doubleFault="ngModel">
+                    </div>
+                    <div *ngIf="doubleFault.invalid && (doubleFault.dirty || doubleFault.touched)" class="alert alert-danger">
+                        <div *ngIf="doubleFault.errors.required">
+                            Double faults is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="forhendHits">Forhend Hits: </label>
+                        <input type="text" [(ngModel)]="report.forhendHits" class="form-control"
+                            placeholder="Enter forhend hits" name="forhendHits" required #forhendHits="ngModel">
+                    </div>
+                    <div *ngIf="forhendHits.invalid && (forhendHits.dirty || forhendHits.touched)" class="alert alert-danger">
+                        <div *ngIf="forhendHits.errors.required">
+                            Forhend Hits is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="winnerPoints">Winner Points: </label>
+                        <input type="text" [(ngModel)]="report.winnerPoints" class="form-control"
+                            placeholder="Enter report winner points" name="winnerPoints" required #winnerPoints="ngModel">
+                    </div>
+                    <div *ngIf="winnerPoints.invalid && (winnerPoints.dirty || winnerPoints.touched)" class="alert alert-danger">
+                        <div *ngIf="winnerPoints.errors.required">
+                            Winner Points is required.
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="unforcedErros">Unforced Erros: </label>
+                        <input type="text" [(ngModel)]="report.unforcedErros" class="form-control"
+                            placeholder="Enter unforced Erros" name="unforcedErros" required #unforcedErros="ngModel">
+                    </div>
+                    <div *ngIf="unforcedErros.invalid && (unforcedErros.dirty || unforcedErros.touched)" class="alert alert-danger">
+                        <div *ngIf="unforcedErros.errors.required">
+                            Unforced erros is required.
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="backendHits">Backend Hits: </label>
+                        <input type="text" [(ngModel)]="report.backendHits" class="form-control"
+                            placeholder="Enter backend hits" name="backendHits" required #backendHits="ngModel">
+                    </div>
+                    <div *ngIf="backendHits.invalid && (backendHits.dirty || backendHits.touched)" class="alert alert-danger">
+                        <div *ngIf="backendHits.errors.required">
+                            Backend Hits is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="voles">Voles: </label>
+                        <input type="text" [(ngModel)]="report.voles" class="form-control"
+                            placeholder="Enter voles" name="voles" required #voles="ngModel">
+                    </div>
+                    <div *ngIf="voles.invalid && (voles.dirty || voles.touched)" class="alert alert-danger">
+                        <div *ngIf="voles.errors.required">
+                            Voles is required.
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="challanges">Challanges: </label>
+                        <input type="text" [(ngModel)]="report.challanges" class="form-control"
+                            placeholder="Enter challanges" name="challanges" required #challanges="ngModel">
+                    </div>
+                    <div *ngIf="challanges.invalid && (challanges.dirty || challanges.touched)" class="alert alert-danger">
+                        <div *ngIf="challanges.errors.required">
+                            Challanges is required.
+                        </div>
+                    </div>
+        
+
+                    
+                    <div class="form-group">
+                        <label for="winnerPointsFirstService">Winner Points First Service: </label>
+                        <input type="text" [(ngModel)]="report.winnerPointsFirstService" class="form-control"
+                            placeholder="Enter winner Points First Service" name="winnerPointsFirstService" required #winnerPointsFirstService="ngModel">
+                    </div>
+                    <div *ngIf="winnerPointsFirstService.invalid && (winnerPointsFirstService.dirty || winnerPointsFirstService.touched)" class="alert alert-danger">
+                        <div *ngIf="winnerPointsFirstService.errors.required">
+                            Winner Points First Service are required.
+                        </div>
+                    </div>
+        
+
+                    <div class="form-group">
+                        <label for="winnerPointsSecondService">Winner Points Second Service: </label>
+                        <input type="text" [(ngModel)]="report.winnerPointsSecondService" class="form-control"
+                            placeholder="Enter winner Points First Service" name="winnerPointsSecondService" required #winnerPointsSecondService="ngModel">
+                    </div>
+                    <div *ngIf="winnerPointsSecondService.invalid && (winnerPointsSecondService.dirty || winnerPointsSecondService.touched)" class="alert alert-danger">
+                        <div *ngIf="winnerPointsSecondService.errors.required">
+                            Winner Points Second Service are required.
+                        </div>
+                    </div>
+        
+                
+
+                    <button type="submit" class="btn btn-primary"> Add Report </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>

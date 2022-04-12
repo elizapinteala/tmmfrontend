@@ -1,0 +1,108 @@
+<div>
+    <div style="font-size: 40px;">
+        <span class="mb-6"> <a href="#" routerLink="/tournamentMatch">
+            <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+        </div>
+
+  
+<br />
+<br />
+
+
+<div class="row" *ngIf="showMsg==1">
+    <p class="alert alert-success">
+        <strong>Match was edited successfully!</strong>
+    </p>
+</div>
+
+<div class="row" *ngIf="showMsg==2">
+    <p class="alert alert-danger">
+        <strong>Match cannot be edited!</strong>
+    </p>
+</div>
+
+<div class="card spur-card">
+
+    <div class="card-header">
+        <div class="spur-card-title font-weight-bold"> Edit Match</div>
+    </div>
+    <div class="card-body ">
+    
+            
+                <ul>
+                    <label>Name first Player:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.namePlayer1" class="form-control" name="namePlayer1" required
+                         readonly #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Name second Player:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.namePlayer2" class="form-control"
+                         readonly   name="namePlayer2" required #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Match Date:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.matchDate" class="form-control" name="matchDate" required readonly
+                            #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Match Type:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.matchType" class="form-control" name="matchType" required
+                         readonly   #name="ngModel">
+                    </label>
+                    <br/>
+                    <label>Tour:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.tour" class="form-control" name="tour" required
+                         readonly   #name="ngModel">
+                    </label>
+                
+                    <br />
+                    <label for="ranking">Court Name:
+                        <input type="text" [(ngModel)]="editmatch.courtName" class="form-control"
+                         min="1"   name="courtName" required #name="ngModel" readonly>
+                    </label>
+                    <br />
+                    <label>Referee Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.refereeName" class="form-control"
+                            style="width: 200px" max="10000" name="refereeName" readonly #name="ngModel">
+                    </label>
+                    <br />
+
+                    <label>Status:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.status" class="form-control"
+                            style="width: 200px" max="10000" name="status" required #name="ngModel">
+                    </label>
+                    <br />
+
+                    
+                    <label>Winner:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.winner" class="form-control"
+                            style="width: 200px" max="10000" name="winner" required #name="ngModel">
+                    </label>
+                    <br />
+                   
+                    <label>SCore:
+                        <br />
+                        <input type="text" [(ngModel)]="editmatch.score" class="form-control"
+                            style="width: 200px" max="10000" name="score" required #name="ngModel">
+                    </label>
+
+
+                    <button type="button" class="btn btn-info edit" (click)="editMatch(editmatch)">
+                        Save
+                    </button>
+
+
+                </ul>
+            
+         
+</div>
+</div>
+</div>

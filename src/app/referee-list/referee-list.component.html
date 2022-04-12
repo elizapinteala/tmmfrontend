@@ -1,0 +1,101 @@
+<div>
+    <div>
+        <div style="font-size: 40px;">
+        <span class="mb-3"> <a href="#" routerLink="add">
+            <fa-icon [icon]="faAdd" title="add referee"></fa-icon></a></span>
+            </div>
+        
+    </div>
+    
+    <!-- <span class="mb-3"><button class="btn btn-primary" style="float:right" routerLink="add">Add Referee</button></span> -->
+</div>
+<br />
+<div class="row" style="align-items: center;">
+    <!-- <div class="card spur-card">
+        <div class="card-header">
+
+            <div class="spur-card-title font-weight-bold"> List refree</div>
+        </div>
+        <div class="card-body" cols="3"> -->
+            <table mat-table [dataSource]="refereeList" matSort>
+                <ng-container matColumnDef="firstName">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>First Name</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:160px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="firstNameFilter" id="firstNameFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee">
+                            {{referee.firstName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Last Name</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="lastNameFilter" id="lastNameFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee"> {{referee.lastName}} </td>
+                </ng-container>
+                <ng-container matColumnDef="age">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Age</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="ageFilter" id="ageFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee"> {{referee.age}} </td>
+                </ng-container>
+                <ng-container matColumnDef="gender">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Gender </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="genderFilter" id="genderFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee"> {{referee.gender }} </td>
+                </ng-container>
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Position </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:40px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="positionFilter" id="positionFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee"> {{referee.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="nationality">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Nationality </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:40px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="nationalityFilter" id="nationalityFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee"> {{referee.nationality}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="filter">
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span r> Actions </span>
+                        <!-- <button type="button" class="btn btn-link" (click)="filterReferees();" title="Filter"> 
+                            <fa-icon [icon]="faSearch"></fa-icon>
+                            
+                        </button> |
+                        <button type="button" class="btn btn-link"
+                            (click)="numberOfFilters=0; getReferees(); clearFilter()" title="Clear filters">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                        </button> -->
+                    </th>
+                    <td mat-cell *matCellDef="let referee">
+                        <a href="#" routerLink="edit/{{referee.id}}">
+                            <fa-icon [icon]="faEdit" ></fa-icon></a>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    <!-- </div>
+</div> -->
+

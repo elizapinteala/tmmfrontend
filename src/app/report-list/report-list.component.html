@@ -1,0 +1,172 @@
+<div class="split up">
+<div>
+    <div style="font-size: 40px;">
+        <span class="mb-3"> <a href="#" routerLink="add">
+            <fa-icon [icon]="faPlus" title="add report"></fa-icon></a></span>
+          
+            </div>
+</div>
+<br />
+<div class="row">
+    <!-- <div class="card spur-card">
+        <div class="card-header">
+
+            <div class="spur-card-title font-weight-bold"> List reports</div>
+        </div>
+        <div class="card-body" cols="3"> -->
+            <table mat-table [dataSource]="reporttList" matSort>
+                <ng-container matColumnDef="playerName">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Player Name</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:160px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="playerNameFilter" id="playerNameFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report">
+                            {{report.playerName}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="result">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Result</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="resultFilter" id="resultFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.result}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="aches">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Aces</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="achesFilter" id="achesFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.aces}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="doubleFault">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Double Fault </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="doubleFaultFilter" id="doubleFaultFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.doubleFault }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="forhendHits">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Forhend Hits</span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="forhendHitsFilter" id="forhendHitsFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.forhendHits }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="winnerPoints">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Winner Points </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="winnerPointsFilter" id="winnerPointsFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.winnerPoints }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="unforcedErros">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Unforced Errors </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="unforcedErrosFilter" id="unforcedErrosFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.unforcedErros }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="voles">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Voles </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="volesFilter" id="volesFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.voles }} </td>
+                </ng-container>
+               
+                <ng-container matColumnDef="backendHits">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header> Backend Hits </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="backendHitsFilter" id="backendHitsFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.backendHits }} </td>
+                </ng-container>
+               
+
+                <ng-container matColumnDef="challanges">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Challanges </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="challangesFilter" id="challangesFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.challanges }} </td>
+                </ng-container>
+
+
+                
+                <ng-container matColumnDef="winnerPointsFirstService">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Winner Points First Service </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="winnerPointsFirstServiceFilter" id="winnerPointsFirstServiceFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.winnerPointsFirstService }} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="winnerPointsSecondService">
+                    <th mat-header-cell *matHeaderCellDef> <span mat-sort-header>Winner Points Second Service </span>
+                        <!-- <mat-form-field class="filter" floatLabel="never" style=width:80px>
+                            <mat-label><span style="font-size:0.8em; font-weight: 100">filter</span></mat-label>
+                            <input matInput [formControl]="winnerPointsSecondServiceFilter" id="winnerPointsSecondServiceFilter">
+                        </mat-form-field> -->
+                    </th>
+                    <td mat-cell *matCellDef="let report"> {{report.winnerPointsSecondService }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="filter">
+                    <th mat-header-cell *matHeaderCellDef style="width:250px;">
+                        <button type="button" class="btn btn-link" (click)="filterCourts();" title="Filter"><i
+                                class="fas fa-search"></i></button> |
+                        <button type="button" class="btn btn-link"
+                            (click)=" getReports(); clearFilter()" title="Clear filters"><i
+                                class="fas fa-trash"></i></button>
+
+                    </th>
+
+                    
+
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+</div>
+<div class="split down">
+          
+            <app-report-graph></app-report-graph>
+      
+    
+    </div>
+    <!-- </div>
+</div> -->

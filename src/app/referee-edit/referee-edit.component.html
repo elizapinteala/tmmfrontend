@@ -1,0 +1,58 @@
+<div>
+    <div style="font-size: 40px;">
+        <span class="mb-6"> <a href="#" routerLink="/referees">
+            <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+        </div>
+
+
+<br />
+<br />
+
+
+<div class="row" *ngIf="showMsg==1">
+    <p class="alert alert-success">
+        <strong>Player was edited successfully!</strong>
+    </p>
+</div>
+
+<div class="row" *ngIf="showMsg==2">
+    <p class="alert alert-danger">
+        <strong>Player cannot be edited!</strong>
+    </p>
+</div>
+
+<div class="card spur-card">
+
+    <div class="card-header">
+        <div class="spur-card-title font-weight-bold"> Edit Referee</div>
+    </div>
+    <div class="card-body ">
+    
+            
+                <ul>
+                    <label>First Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editreferee.firstName" class="form-control" name="firstName" required
+                         readonly #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Last Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editreferee.lastName" class="form-control"
+                         readonly   name="lastName" required #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Age:
+                        <br />
+                        <input type="number" [(ngModel)]="editreferee.age" class="form-control" name="age" required
+                            #name="ngModel">
+                    </label>
+                <br/>
+                    
+                    <button type="button" class="btn btn-info edit" (click)="editReferee(editreferee)">
+                        Save
+                    </button>
+                </ul>
+                </div>
+</div>
+</div>

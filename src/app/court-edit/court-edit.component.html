@@ -1,0 +1,62 @@
+<div class="row" *ngIf="showMsg==1">
+    <p class="alert alert-success">
+        <strong>Court was edited successfully!</strong>
+    </p>
+</div>
+
+<div class="row" *ngIf="showMsg==2">
+    <p class="alert alert-danger">
+        <strong>Court cannot be edited!</strong>
+    </p>
+</div>
+
+<div class="card spur-card">
+
+    <div class="card-header">
+        <div class="spur-card-title font-weight-bold"> Edit Court</div>
+    </div>
+    <div class="card-body ">
+    
+            
+                <ul>
+                    <label>Court Id:
+
+                        <input type="text" [(ngModel)]="editcourt.id" class="form-control" name="id" required
+                            #name="ngModel" readonly>
+                    </label>
+                    <br />
+                    <label>Court Name:
+                        <br />
+                        <input type="text" [(ngModel)]="editcourt.courtName" class="form-control" name="courtName" required
+                         readonly #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Capacity:
+                        <br />
+                        <input type="number" [(ngModel)]="editcourt.capacity" class="form-control"
+                         readonly name="capacity" required #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Surface:
+                        <br />
+                        <input type="text" [(ngModel)]="editcourt.surface" class="form-control" name="surface" required
+                         readonly   #name="ngModel">
+                    </label>
+                    <br />
+                    <label>Avalability:
+                        <br />
+                        <input type="number" [(ngModel)]="editcourt.avalability" class="form-control" name="avalability" required
+                          #name="ngModel">
+                    </label>
+                    
+
+                    <button type="button" class="btn btn-info edit" (click)="editCourt(editcourt)">
+                        Save
+                    </button>
+
+
+                </ul>
+            
+         
+</div>
+</div>

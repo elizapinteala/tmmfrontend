@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-md-6">
+
+        <div style="font-size: 40px;">
+            <span class="mb-6"> <a href="#" routerLink="/referees">
+                <fa-icon [icon]="faArrowLeft"></fa-icon></a></span>
+            </div>
+    
+        <!-- <button routerLink="/referee" class="btn btn-secondary">
+            Back
+        </button> -->
+        <div>
+            <br />
+        </div>
+        <div class="row" *ngIf="showMsg==1">
+            <p class="alert alert-success">
+                <strong>Referee was added successfully!</strong>
+            </p>
+        </div>
+        <div></div>
+        <div class="row" *ngIf="showMsg==2">
+            <p class="alert alert-danger">
+                <strong>Referee cannot be added!</strong>
+            </p>
+        </div>
+        <div class="card spur-card">
+            <div class="card-header">
+                <div class="spur-card-title font-weight-bold"> Add a new referee</div>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="onSubmit(refereeForm)" #refereeForm="ngForm" class="form">
+                    <div class="form-group">
+                        <label for="firstName">First Name: </label>
+                        <input type="text" [(ngModel)]="referee.firstName" class="form-control"
+                            placeholder="Enter referee first name" name="firstName" required #firstName="ngModel">
+                    </div>
+                    <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+                        <div *ngIf="firstName.errors.required">
+                            First name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name: </label>
+                        <input type="text" [(ngModel)]="referee.lastName" class="form-control"
+                            placeholder="Enter referee last name" name="lastName" required #lastName="ngModel">
+                    </div>
+                    <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+                        <div *ngIf="lastName.errors.required">
+                            Last name is required.
+                        </div>
+                    </div>
+                    <label for="gender">Gender:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <mat-label>Gender</mat-label>
+                                <mat-select [(ngModel)]="referee.gender" name="gender" required
+                                    #gender="ngModel">
+                                    <mat-option *ngFor="let gen of genderValue"
+                                        [value]="gen.value">
+                                        {{gen.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </label>
+
+                    <div class="form-group">
+                        <label for="age">Age: </label>
+                        <input type="number" [(ngModel)]="referee.age" class="form-control"
+                            placeholder="Enter referee age" name="age" required #age="ngModel">
+                    </div>
+                    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+                        <div *ngIf="age.errors.required">
+                            Age is required.
+                        </div>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="nationality">Nationality: </label>
+                        <input type="text" [(ngModel)]="referee.nationality" class="form-control"
+                            placeholder="Enter referee nationality" name="nationality" required #nationality="ngModel">
+                    </div>
+                    <div *ngIf="nationality.invalid && (nationality.dirty || nationality.touched)" class="alert alert-danger">
+                        <div *ngIf="nationality.errors.required">
+                            Nationality is required.
+                        </div>
+                    </div>
+                    <label for="position">Position:
+                        <div class="form-group">
+                            <mat-form-field>
+                                <mat-label>Position</mat-label>
+                                <mat-select [(ngModel)]="referee.position" name="position" required
+                                    #position="ngModel">
+                                    <mat-option *ngFor="let pos of positionValue"
+                                        [value]="pos.value">
+                                        {{pos.viewValue}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </label>
+                    
+                <br/>
+
+                    <button type="submit" class="btn btn-primary"> Add referee </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>

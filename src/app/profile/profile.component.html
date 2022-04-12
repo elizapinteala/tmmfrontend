@@ -1,0 +1,27 @@
+<div class="container" *ngIf="currentUser; else loggedOut">
+    <header >
+      <h3>
+        <strong>Username: </strong> {{ currentUser.username }}
+      </h3>
+    </header>
+    <p>
+      <strong>Email:</strong>
+      {{ currentUser.email }}
+    </p>
+    <p *ngIf="!!schoolRegistering">
+      <strong>School:</strong>
+      {{ schoolRegistering.skiSchoolName }} 
+      Start Date: {{schoolRegistering.startDate }}
+      End Date: {{schoolRegistering.endDate }}
+    </p>
+    <p *ngIf="!!instructorLessons">
+    <strong >Instructor lessons:</strong>
+      <li *ngFor="let lesson of instructorLessons.instructor">
+        {{ lesson.name }}
+      </li>
+  </p>
+  </div>
+  
+  <ng-template #loggedOut>
+    Please login.
+  </ng-template>
